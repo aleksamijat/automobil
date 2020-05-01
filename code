@@ -50,11 +50,11 @@ public:
         stanje = stanje_;
         brojBrzina = broj_b;
     }
-    Menjac(Menjac &m)
+    Menjac(Menjac &copy_menjac)
     {
-        tip = m.tip;
-        stanje = m.stanje;
-        brojBrzina = m.brojBrzina;
+        tip = copy_menjac.tip;
+        stanje = copy_menjac.stanje;
+        brojBrzina = copy_menjac.brojBrzina;
     }
     TipMenjaca getTip()
     {
@@ -101,11 +101,11 @@ public:
         stanje = stanje_;
         brojCilindara = broj_c;
     }
-    Motor(Motor &m)
+    Motor(Motor &copy_motor)
     {
-        tip = m.tip;
-        stanje = m.stanje;
-        brojCilindara = m.brojCilindara;
+        tip = copy_motor.tip;
+        stanje = copy_motor.stanje;
+        brojCilindara = copy_motor.brojCilindara;
     }
     TipMotora getTip()
     {
@@ -149,10 +149,10 @@ public:
         tip = tip_;
         stanje = stanje_;
     }
-    Svetla(Svetla &s)
+    Svetla(Svetla &copy_svetla)
     {
-        tip = s.tip;
-        stanje = s.stanje;
+        tip = copy_svetla.tip;
+        stanje = copy_svetla.stanje;
     }
     TipSvetala getTip()
     {
@@ -188,10 +188,10 @@ public:
         tip = tip_;
         stanje = stanje_;
     }
-    Kocnice(Kocnice &k)
+    Kocnice(Kocnice &copy_kocnice)
     {
-        tip = k.tip;
-        stanje = k.stanje;
+        tip = copy_kocnice.tip;
+        stanje = copy_kocnice.stanje;
     }
     TipKocnica getTip()
     {
@@ -227,10 +227,10 @@ public:
         stanje = stanje_;
         broj = broj_;
     }
-    Vrata(Vrata &v)
+    Vrata(Vrata &copy_vrata)
     {
-        stanje = v.stanje;
-        broj = b.broj;
+        stanje = copy_vrata.stanje;
+        broj = copy_vrata.broj;
     }
     VrataStanje getStanje()
     {
@@ -262,9 +262,9 @@ public:
     {
         stanje = stanje_;
     }
-    Hauba(Hauba &h)
+    Hauba(Hauba &copy_hauba)
     {
-        stanje = h.stanje;
+        stanje = copy_hauba.stanje;
     }
     HaubaStanje getStanje()
     {
@@ -288,9 +288,9 @@ public:
     {
         stanje = stanje_;
     }
-    Gepek(Gepek &g)
+    Gepek(Gepek &copy_gepek)
     {
-        stanje = g.stanje;
+        stanje = copy_gepek.stanje;
     }
     GepekStanje getStanje()
     {
@@ -314,9 +314,9 @@ public:
     {
         stanje = stanje_;
     }
-    Gume(Gume &g)
+    Gume(Gume &copy_gume)
     {
-        stanje = g.stanje;
+        stanje = copy_gume.stanje;
     }
     GumeStanje getStanje()
     {
@@ -343,10 +343,10 @@ public:
         tip = tip_;
         stanje = stanje_;
     }
-    Ram(Ram &r)
+    Ram(Ram &copy_ram)
     {
-        tip = r.tip;
-        stanje = r.stanje;
+        tip = copy_ram.tip;
+        stanje = copy_ram.stanje;
     }
     TipRama getTip()
     {
@@ -381,10 +381,10 @@ public:
         tip = tip_;
         stanje = stanje_;
     }
-    Felne(Felne &f)
+    Felne(Felne &copy_felne)
     {
-        tip = f.tip;
-        stanje = f.stanje;
+        tip = copy_felne.tip;
+        stanje = copy_felne.stanje;
     }
     TipFelni getTip()
     {
@@ -419,10 +419,10 @@ public:
         tip = tip_;
         stanje = stanje_;
     }
-    Prozori(Prozori &p)
+    Prozori(Prozori &copy_prozori)
     {
-        tip = p.tip;
-        stanje = p.stanje;
+        tip = copy_prozori.tip;
+        stanje = copy_prozori.stanje;
     }
     TipProzora getTip()
     {
@@ -457,10 +457,10 @@ public:
         tip = tip_;
         stanje = stanje_;
     }
-    Sedista(Sedista &s)
+    Sedista(Sedista &copy_sedista)
     {
-        tip = s.tip;
-        stanje = s.stanje;
+        tip = copy_sedista.tip;
+        stanje = copy_sedista.stanje;
     }
     TipSedista getTip()
     {
@@ -495,10 +495,10 @@ public:
         tip = tip_;
         stanje = stanje_;
     }
-    Volan(Volan &v)
+    Volan(Volan &copy_volan)
     {
-        tip = v.tip;
-        stanje = v.stanje;
+        tip = copy_volan.tip;
+        stanje = copy_volan.stanje;
     }
     TipVolana getTip()
     {
@@ -530,9 +530,9 @@ public:
     {
         boja = boja_;
     }
-    Karoserija(Karoserija &k)
+    Karoserija(Karoserija &copy_karoserija)
     {
-        boja = k.boja;
+        boja = copy_karoserija.boja;
     }
     BojaKaroserija getBoja()
     {
