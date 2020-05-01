@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
-enum TipMotora {I, V, W, H};
 enum TipMenjaca {AUTOMATIK, MANUAL};
+enum TipMotora {I, V, W, H};
+enum TipPrenosa {FWD, RWD, AWD, 4WD};
 enum TipKocnica {DISK, DOBOS};
 enum TipSvetala {HALOGEN, XENON, LED};
 enum TipRama {LADDER, BACKBONE, MONOCOQUE, SPACE};
@@ -10,13 +11,17 @@ enum TipFelni {CAST, FORGE};
 enum TipProzora {NORMALNI, BALISTICKI, ZATAMLJENI};
 enum TipSedista {PLATNENA, SPORTSKA, KOZNA};
 enum TipVolana {PLASTICNI, SPORTSKI, KOZNI};
+enum TipRezervoara {METALNI, PLASTICNI};
+enum TipHladjenja {VAZDUSNO, VODENO};
 
 enum BrojVrata {DVOJE, CETVORO};
 
-enum MotorStanje {UGASEN, UPALJEN, POKVAREN};
-enum MenjacStanje {ISPRAVAN, POKVAREN};
-enum KocniceStanje {ANGAZOVANE, NE_ANGAZOVANE, POKVARENE};
-enum SvetlaStanje {UPALJENA, UGASENA, POKVARENA};
+enum MenjacStanje {ISPRAVAN, NE_ISPRAVAN};
+enum MotorStanje {UGASEN, UPALJEN, NE_ISPRAVAN};
+enum PrenosStanje {ISPRAVAN, NE_ISPRAVAN};
+enum KocniceStanje {ANGAZOVANE, NE_ANGAZOVANE, NE_ISPRAVNE};
+enum RucnaStanje {ANGAZOVANA, NE_ANGAZOVANA, NE_ISPRAVNA};
+enum SvetlaStanje {UPALJENA, UGASENA, NE_ISPRAVNA};
 enum VrataStanje {OTVORENA, ZATVORENA};
 enum HaubaStanje {OTVORENA, ZATVORENA};
 enum GepekStanje {OTVOREN, ZATVOREN};
@@ -26,6 +31,9 @@ enum FelneStanje {ISPRAVNE, ISKRZANE};
 enum ProzoriStanje {PODIGNUTI, SPUSTENI, POLOMLJENI};
 enum SedistaStanje {NAMESTENA, NE_NAMESTENA, POLOMLJENA, ISTROSENA};
 enum VolanStanje {ISPRAVAN, ISTROSEN};
+enum RezervoarStanje {ISPRAVAN, BUSAN};
+enum HladjenjeStanje {ISPREVNO, NE_ISPRAVNO};
+enum OzvucenjeStanje {UKLJUCENO, ISKLJUCENO, NE_ISPRAVNO};
 
 enum AutoStanje {PARKIRAN, U_VOZNJI, POKVAREN, SLUPAN, KOD_MAJSTORA};
 
@@ -133,6 +141,45 @@ public:
     }
 };
 
+class Prenos
+{
+private:
+    TipPrenosa tip;
+    PrenosStanje stanje;
+public:
+    Prenos()
+    {
+        tip = FWD;
+        stanje = ISPRAVAN;
+    }
+    Prenos(TipPrenosa tip, PrenosStanje stanje)
+    {
+        tip = tip_;
+        stanje = stanje_;
+    }
+    Prenos(Prenos &copy_prenos)
+    {
+        tip = copy_prenos.tip;
+        stanje = copy_prenos.stanje;
+    }
+    TipPrenosa getTip()
+    {
+        return tip;
+    }
+    PrenosStanje getStanje()
+    {
+        return stanje;
+    }
+    void setTip(TipPrenosa tip_)
+    {
+        tip = tip_;
+    }
+    void setStanje(PrenosStanje stanje_)
+    {
+        stanje = stanje_;
+    }
+};
+
 class Svetla
 {
 private:
@@ -211,6 +258,33 @@ public:
     }
 };
 
+class Rucna
+{
+private:
+    RucnaStanje stanje;
+public:
+    Rucna()
+    {
+        stanje = ANGAZOVANA;
+    }
+    Rucna(RucnaStanje stanje)
+    {
+        stanje = stanje_;
+    }
+    Rucna(Rucna &copy_rucna)
+    {
+        stanje = copy_rucna.stanje;
+    }
+    RucnaStanje getStanje()
+    {
+        return stanje;
+    }
+    void setStanje(RucnaStanje stanje_)
+    {
+        stanje = stanje_;
+    }
+};
+
 class Vrata
 {
 private:
@@ -249,6 +323,7 @@ public:
         broj = broj_;
     }
 };
+
 class Hauba
 {
 private:
@@ -275,6 +350,7 @@ public:
         stanje = stanje_;
     }
 };
+
 class Gepek
 {
 private:
@@ -301,6 +377,7 @@ public:
         stanje = stanje_;
     }
 };
+
 class Gume
 {
 private:
@@ -327,6 +404,7 @@ public:
         stanje = stanje_;
     }
 };
+
 class Ram
 {
 private:
@@ -365,6 +443,7 @@ public:
         stanje = stanje_;
     }
 };
+
 class Felne
 {
 private:
@@ -403,6 +482,7 @@ public:
         stanje = stanje_;
     }
 };
+
 class Prozori
 {
 private:
@@ -441,6 +521,7 @@ public:
         stanje = stanje_;
     }
 };
+
 class Sedista
 {
 private:
@@ -479,6 +560,7 @@ public:
         stanje = stanje_;
     }
 };
+
 class Volan
 {
 private:
@@ -517,6 +599,112 @@ public:
         stanje = stanje_;
     }
 };
+
+class Rezervoar
+{
+private:
+    TipRezervoara tip;
+    RezervoarStanje stanje;
+public:
+    Rezervoar()
+    {
+        tip = METALNI;
+        stanje = ISPRAVAN;
+    }
+    Rezervoar(TipRezervoara tip, RezervoarStanje stanje)
+    {
+        tip = tip_;
+        stanje = stanje_;
+    }
+    Rezervoar(Rezervoar &copy_rezervoar)
+    {
+        tip = copy_rezervoar.tip;
+        stanje = copy_rezervoar.stanje;
+    }
+    TipRezervoara getTip()
+    {
+        return tip;
+    }
+    RezervoarStanje getStanje()
+    {
+        return stanje;
+    }
+    void setTip(TipRezervoara tip_)
+    {
+        tip = tip_;
+    }
+    void setStanje(RezervoarStanje stanje_)
+    {
+        stanje = stanje_;
+    }
+};
+
+class Hladjenje
+{
+private:
+    TipHladjenja tip;
+    HladjenjeStanje stanje;
+public:
+    Hladjenje()
+    {
+        tip = VODENO;
+        stanje = ISPREVNO;
+    }
+    Hladjenje(TipHladjenjatip, HladjenjeStanje stanje)
+    {
+        tip = tip_;
+        stanje = stanje_;
+    }
+    Hladjenje(Rezervoar &copy_hladjenje)
+    {
+        tip = copy_hladjenje.tip;
+        stanje = copy_hladjenje.stanje;
+    }
+    TipHladjenja getTip()
+    {
+        return tip;
+    }
+    HladjenjeStanje getStanje()
+    {
+        return stanje;
+    }
+    void setTip(TipHladjenja tip_)
+    {
+        tip = tip_;
+    }
+    void setStanje(HladjenjeStanje stanje_)
+    {
+        stanje = stanje_;
+    }
+};
+
+class Ozvucenje
+{
+private:
+    OzvucenjeStanje stanje;
+public:
+    Ozvucenje()
+    {
+        stanje = ISKLJUCENO;
+    }
+    Ozvucenje(OzvucenjeStanje stanje)
+    {
+        stanje = stanje_;
+    }
+    Ozvucenje(Ozvucenje &copy_ozvucenje)
+    {
+        stanje = copy_ozvucenje.stanje;
+    }
+    OzvuStanje getStanje()
+    {
+        return stanje;
+    }
+    void setStanje(OzvucenjeStanje stanje_)
+    {
+        stanje = stanje_;
+    }
+};
+
 class Karoserija
 {
 private:
