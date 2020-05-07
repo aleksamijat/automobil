@@ -138,7 +138,7 @@ public:
 
     Automobil& operator=(const Automobil& other){
         menjac = other.getMenjac();
-        motor = other.getMenjac();
+        motor = other.getMotor();
         prenos = other.getPrenos();
         svetla = other.getSvetla();
         kocnice = other.getKocnice();
@@ -163,39 +163,38 @@ std::ostream& operator<<(std::ostream& o, const Automobil& obj)
 {
     return o;
 }
-std::istream& operator>>(std::istream& i, Automobil& obj)
-{
-    if()
-        i.setstate(std::ios::failbit);
-    return i;
-}
 
 int main()
 {
     Menjac menjac(true, true, 4);
     Motor motor(I, UGASEN, 4);
-    Prenos prenos(FWD);
+    Prenos prenos(FWD, true);
     Svetla svetla(HALOGEN, UGASENA);
     Kocnice kocnice(true, NE_ANGAZOVANE);
     Rucna rucna(ANGAZOVANA);
-    List<Vrata> vrata{true, true};
+    Vrata vrataV(true);
+    List<Vrata> vrata;
+    vrata.add(0, vrataV);
+    vrata.add(1, vrataV);
+    vrata.add(2, vrataV);
+    vrata.add(3, vrataV);
     Hauba hauba(true);
     Gepek gepek(true);
     Gume gume(NADUVANE);
-    Ram ram(LADDER);
+    Ram ram(LADDER, true);
     Felne felne(true);
     Prozori prozori(NORMALNI, PODIGNUTI);
     Sedista sedista(PLATNENA, NAMESTENA);
-    Rezervoar rezervoar(true);
+    Rezervoar rezervoar(true, 40);
     Karoserija karoserija(BELA);
     Volan volan(PLASTICNI);
     Ozvucenje ozvucenje(NE_ISPRAVNO);
     Hladjenje hladjenje(true);
 
-    Automobil automobil{menjac, motor, prenos, svetla, kocnice,
+    Automobil automobil(menjac, motor, prenos, svetla, kocnice,
                         rucna, vrata, hauba, gepek,
                         gume, ram, felne, prozori,
                         sedista, rezervoar, karoserija, volan,
-                        ozvucenje, hladjenje};
+                        ozvucenje, hladjenje);
     return 0;
 }
