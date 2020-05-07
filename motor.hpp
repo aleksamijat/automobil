@@ -75,8 +75,7 @@ std::ostream& operator<<(std::ostream& o, const Motor& obj)
 }
 std::istream& operator>>(std::istream& i, Motor& obj)
 {
-    if()
-        i.setstate(std::ios::failbit);
+    i.setstate(std::ios::failbit);
     return i;
 }
 
