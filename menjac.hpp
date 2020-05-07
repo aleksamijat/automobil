@@ -72,8 +72,7 @@ std::ostream& operator<<(std::ostream& o, const Menjac& obj)
 }
 std::istream& operator>>(std::istream& i, Menjac& obj)
 {
-    if()
-        i.setstate(std::ios::failbit);
+    i.setstate(std::ios::failbit);
     return i;
 }
 
