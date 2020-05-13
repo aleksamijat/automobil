@@ -5,6 +5,7 @@ class Gepek
 {
 private:
         bool isZatvoren;
+        bool isNatovaren;
         int zapremina;
         int height;
         int width;
@@ -12,13 +13,15 @@ public:
         Gepek()
         {
                 isZatvoren = true;
+                isNatovaren = false;
                 zapremina = 300;
                 height = 150;
                 width = 110;
         }
-        Gepek(bool isZatvoren, int zapremina_, int height_, int width_)
+        Gepek(bool isZatvoren, bool isNatovaren, int zapremina_, int height_, int width_)
         {
                 this -> isZatvoren = isZatvoren;
+                this -> isNatovaren = isNatovaren;
                 zapremina = zapremina_;
                 height = height_;
                 width = width_;
@@ -26,6 +29,7 @@ public:
         Gepek (const Gepek &copy_gepek)
         {
                 isZatvoren = copy_gepek.isZatvoren;
+                isNatovaren = copy_gepek.isNatovaren;
                 zapremina = copy_gepek.zapremina;
                 height = copy_gepek.height;
                 width = copy_gepek.width;
@@ -34,6 +38,10 @@ public:
         bool getIsZatvoren()
         {
                 return isZatvoren;
+        }
+        bool getIsPun()
+        {
+                return isNatovaren;
         }
         int getZapremina()
         {
@@ -51,6 +59,10 @@ public:
         void setIsZatvoren(bool isZatvoren)
         {
                 this -> isZatvoren = isZatvoren;
+        }
+        void setIsPun(bool isNatovaren)
+        {
+                this -> isNatovaren = isNatovaren;
         }
         void setZapremina(int zapremina_)
         {
