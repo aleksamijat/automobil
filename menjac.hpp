@@ -77,9 +77,3 @@ std::ostream& operator<<(std::ostream& o, const Menjac& obj)
 }
 
 #endif // MENJAC_HPP_INCLUDED
-
-    i.setstate(std::ios::failbit);
-    return i;
-}
-
-#endif // MENJAC_HPP_INCLUDED
