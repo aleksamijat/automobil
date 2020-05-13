@@ -1,7 +1,5 @@
 #ifndef GEPEK_HPP_INCLUDED
 #define GEPEK_HPP_INCLUDED
-#include "prozori.hpp"
-#include "karoserija.hpp"
 
 class Gepek
 {
