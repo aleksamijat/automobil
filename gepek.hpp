@@ -69,5 +69,4 @@ public:
 
 };
 
-
 #endif // GEPEK_HPP_INCLUDED
