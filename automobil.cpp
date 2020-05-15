@@ -42,7 +42,7 @@ private:
         Hauba hauba;
         Gepek gepek;
         Ram ram;
-        Tocak tocak;
+        List<Tocak> tocak;
         Prozori prozori;
         Sedista sedista;
         Rezervoar rezervoar;
@@ -59,7 +59,7 @@ public:
                   const Prenos &prenos, const Svetla &svetla,
                   const Kocnice &kocnice, const Rucna &rucna,
                   const List<Vrata> &vrata, const Hauba &hauba,
-                  const Gepek &gepek, const Ram &ram, const Tocak &tocak,
+                  const Gepek &gepek, const Ram &ram, const List<Tocak> &tocak,
                   const Prozori &prozori, const Sedista &sedista,
                   const Rezervoar &rezervoar, const Karoserija &karoserija,
                   const Volan &volan, const Ozvucenje &ozvucenje,
@@ -97,7 +97,7 @@ public:
         Hauba& getHauba(){return hauba;}
         Gepek& getGepek(){return gepek;}
         Ram& getRam(){return ram;}
-        Tocak& getTocak(){return tocak;}
+        List<Tocak>& getTocak(){return tocak;}
         Prozori& getProzori(){return prozori;}
         Sedista& getSedista(){return sedista;}
         Rezervoar& getRezervoar(){return rezervoar;}
@@ -116,7 +116,7 @@ public:
         const Hauba& getHauba()const {return hauba;}
         const Gepek& getGepek()const {return gepek;}
         const Ram& getRam()const {return ram;}
-        const Tocak& getTocak()const {return tocak;}
+        const List<Tocak>& getTocak()const {return tocak;}
         const Prozori& getProzori()const {return prozori;}
         const Sedista& getSedista()const {return sedista;}
         const Rezervoar& getRezervoar()const {return rezervoar;}
@@ -125,10 +125,10 @@ public:
         const Ozvucenje& getOzvucenje()const {return ozvucenje;}
         const Hladjenje& getHladjenje()const {return hladjenje;}
 
-        void fix()override{
-                if(stanje == POKVAREN){
+        void fix()override
+        {
+                if(stanje == POKVAREN)
                 stanje = ISPRAVANANANINENU;
-                }
         }
 
         Automobil& operator=(const Automobil& other){
@@ -161,37 +161,45 @@ std::ostream& operator<<(std::ostream& o, const Automobil& obj)
 
 int main()
 {
-    Menjac menjac(true, true, 4);
-    Motor motor(I, UGASEN, 4, true, 44, 39, 6.2, true);
-    Prenos prenos(FWD, true);
-    Svetla svetla(HALOGEN, UGASENA);
-    Kocnice kocnice(true, false, NE_ANGAZOVANE);
-    Rucna rucna(ANGAZOVANA, true);
-    Vrata vrataV(true);
-    List<Vrata> vrata;
-    vrata.add(0, vrataV);
-    vrata.add(1, vrataV);
-    vrata.add(2, vrataV);
-    vrata.add(3, vrataV);
-    Hauba hauba(true, false, 110, 130);
-    Gepek gepek(true, false, 300, 150, 110);
-    Ram ram(LADDER, true);
+        Menjac menjac(true, true, 4);
+        Motor motor(I, UGASEN, 4, true, 44, 39, 6.2, true);
+        Prenos prenos(FWD, true);
+        Svetla svetla(HALOGEN, UGASENA);
+        Kocnice kocnice(true, false, NE_ANGAZOVANE);
+        Rucna rucna(ANGAZOVANA, true);
 
-    Gume guma(NADUVANE, false, true, 14, 6.5, 3);
-    Felne felna(MULTI, true, true, 14, 6.5, 38, 5, 100);
-    Tocak tocak(guma, felna);
+        Vrata vrataV(true);
+        List<Vrata> vrata;
+        vrata.add(0, vrataV);
+        vrata.add(1, vrataV);
+        vrata.add(2, vrataV);
+        vrata.add(3, vrataV);
 
-    Prozori prozori(NORMALNI, PODIGNUTI);
-    Sedista sedista(PLATNENA, NAMESTENA, 4);
-    Rezervoar rezervoar(true, 40);
-    Karoserija karoserija(BELA, HATCHBACK, true);
-    Volan volan(PLASTICNI, 35);
-    Ozvucenje ozvucenje(NE_ISPRAVNO, 200);
-    Hladjenje hladjenje(true, true);
+        Hauba hauba(true, false, 110, 130);
+        Gepek gepek(true, false, 300, 150, 110);
+        Ram ram(LADDER, true);
 
-    Automobil automobil(menjac, motor, prenos, svetla, kocnice,
-                        rucna, vrata, hauba, gepek, ram, tocak,
-                        prozori, sedista, rezervoar, karoserija,
-                        volan, ozvucenje, hladjenje);
+        Gume guma(NADUVANE, false, true, 14, 6.5, 3);
+        Felne felna(MULTI, true, true, 14, 6.5, 38, 5, 100);
+
+        Tocak tocakT(guma, felna);
+        List<Tocak> tocak;
+        tocak.add(0, tocakT);
+        tocak.add(1, tocakT);
+        tocak.add(2, tocakT);
+        tocak.add(3, tocakT);
+
+        Prozori prozori(NORMALNI, PODIGNUTI);
+        Sedista sedista(PLATNENA, NAMESTENA, 4);
+        Rezervoar rezervoar(true, 40);
+        Karoserija karoserija(BELA, HATCHBACK, true);
+        Volan volan(PLASTICNI, 35);
+        Ozvucenje ozvucenje(NE_ISPRAVNO, 200);
+        Hladjenje hladjenje(true, true);
+
+        Automobil automobil(menjac, motor, prenos, svetla, kocnice,
+                            rucna, vrata, hauba, gepek, ram, tocak,
+                            prozori, sedista, rezervoar, karoserija,
+                            volan, ozvucenje, hladjenje);
     return 0;
 }
