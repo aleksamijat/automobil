@@ -60,7 +60,7 @@ public:
                   const Kocnice &kocnice, const Rucna &rucna,
                   const List<Vrata> &vrata, const Hauba &hauba,
                   const Gepek &gepek, const Ram &ram, const List<Tocak> &tocak,
-                  const Prozori &prozori, const Sedista &sedista,
+                  const Prozori &prozori, const List<Sedista> &sedista,
                   const Rezervoar &rezervoar, const Karoserija &karoserija,
                   const Volan &volan, const Ozvucenje &ozvucenje,
                   const Hladjenje &hladjenje) : menjac(menjac), motor(motor),
@@ -99,7 +99,7 @@ public:
         Ram& getRam(){return ram;}
         List<Tocak>& getTocak(){return tocak;}
         Prozori& getProzori(){return prozori;}
-        Sedista& getSedista(){return sedista;}
+        List<Sedista>& getSedista(){return sedista;}
         Rezervoar& getRezervoar(){return rezervoar;}
         Karoserija& getKaroserija(){return karoserija;}
         Volan& getVolan(){return volan;}
@@ -118,7 +118,7 @@ public:
         const Ram& getRam()const {return ram;}
         const List<Tocak>& getTocak()const {return tocak;}
         const Prozori& getProzori()const {return prozori;}
-        const Sedista& getSedista()const {return sedista;}
+        const List<Sedista>& getSedista()const {return sedista;}
         const Rezervoar& getRezervoar()const {return rezervoar;}
         const Karoserija& getKaroserija()const {return karoserija;}
         const Volan& getVolan()const {return volan;}
@@ -190,7 +190,14 @@ int main()
         tocak.add(3, tocakT);
 
         Prozori prozori(NORMALNI, PODIGNUTI);
-        Sedista sedista(PLATNENA, NAMESTENA, 4);
+
+        Sedista sedistaS(PLATNENA, NAMESTENA, 4);
+        List<Sedista> sedista;
+        sedista.add(0, sedistaS);
+        sedista.add(1, sedistaS);
+        sedista.add(2, sedistaS);
+        sedista.add(3, sedistaS);
+
         Rezervoar rezervoar(true, 40);
         Karoserija karoserija(BELA, HATCHBACK, true);
         Volan volan(PLASTICNI, 35);
