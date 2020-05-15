@@ -10,42 +10,42 @@ private:
 public:
         Hladjenje()
         {
-            isIspravno = true;
-            isVodeno = true;
+                isIspravno = true;
+                isVodeno = true;
         }
         Hladjenje(bool isIspravno, bool isVodeno)
         {
-            this -> isIspravno = isIspravno;
-            this -> isVodeno = isVodeno;
+                this -> isIspravno = isIspravno;
+                this -> isVodeno = isVodeno;
         }
         Hladjenje(const Hladjenje &copy_hladjenje)
         {
-            isIspravno = copy_hladjenje.isIspravno;
-            isVodeno = copy_hladjenje.isVodeno;
+                isIspravno = copy_hladjenje.isIspravno;
+                isVodeno = copy_hladjenje.isVodeno;
         }
-    
+
         bool getIsIspravno()
         {
-            return isIspravno;
+                return isIspravno;
         }
         bool getIsVodeno()
         {
-            return isVodeno;
-        }   
-    
+                return isVodeno;
+        }
+
         void setIsIspravno(bool isIspravno)
         {
-            this -> isIspravno = isIspravno;
+                this -> isIspravno = isIspravno;
         }
         void setIsVodeno(bool isVodeno)
         {
-            this -> isVodeno = isVodeno;
-        }   
-    
+        this -> isVodeno = isVodeno;
+        }
+
         void fix()override{
-            if(isIspravno == false){
+                if(isIspravno == false){
                 isIspravno == true;
-            }
+                }
         }
 };
 
