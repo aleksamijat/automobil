@@ -10,8 +10,8 @@ private:
         TipFelni tip;
         bool isIspravne;
         bool isAligned;
-        float height;
-        float width;
+        float diameter;
+        float depth;
         float offset;
         int brojSrafova;
         int PCD;
@@ -21,19 +21,19 @@ public:
                 tip = MULTI;
                 isIspravne = true;
                 isAligned = true;
-                height = 14;
-                width = 6.5;
+                diameter = 14;
+                depth = 6.5;
                 offset = 38;
                 brojSrafova = 5;
                 PCD = 100;
         }
-        Felne(TipFelni tip_, bool isIspravne, bool isAligned, float height_, float width_, float offset_, int brojSrafova_, int PCD_)
+        Felne(TipFelni tip_, bool isIspravne, bool isAligned, float diameter_, float depth_, float offset_, int brojSrafova_, int PCD_)
         {
                 tip = tip_;
                 this -> isIspravne = isIspravne;
                 this -> isAligned = isAligned;
-                height = height_;
-                width = width_;
+                diameter = diameter_;
+                depth = depth_;
                 offset = offset_;
                 brojSrafova = brojSrafova_;
                 PCD = PCD_;
@@ -43,8 +43,8 @@ public:
                 tip = copy_felne.tip;
                 isIspravne = copy_felne.isIspravne;
                 isAligned = copy_felne.isAligned;
-                height = copy_felne.height;
-                width = copy_felne.width;
+                diameter = copy_felne.diameter;
+                depth = copy_felne.depth;
                 offset = copy_felne.offset;
                 brojSrafova = copy_felne.brojSrafova;
                 PCD = copy_felne.PCD;
@@ -62,13 +62,13 @@ public:
         {
                 return isAligned;
         }
-        float getHeight()
+        float getDiameter()
         {
-                return height;
+                return diameter;
         }
-        float getWidth()
+        float getDepth()
         {
-                return width;
+                return depth;
         }
         float getOffset()
         {
@@ -95,13 +95,13 @@ public:
         {
                 this -> isAligned = isAligned;
         }
-        void setHeight(float height_)
+        void setDiameter(float diameter_)
         {
-                height = height_;
+                diameter = diameter_;
         }
-        void setWidth(float width_)
+        void setDepth(float depth_)
         {
-                width = width_;
+                depth = depth_;
         }
         void setOffset(float offset_)
         {
