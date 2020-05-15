@@ -10,25 +10,21 @@ class Sedista : public Fixable
 private:
         TipSedista tip;
         SedistaStanje stanje;
-        int brojSedista;
 public:
         Sedista()
         {
                 tip = PLATNENA;
                 stanje = NAMESTENA;
-                brojSedista = 4;
         }
-        Sedista(TipSedista tip_, SedistaStanje stanje_, int broj_s)
+        Sedista(TipSedista tip_, SedistaStanje stanje_)
         {
                 tip = tip_;
                 stanje = stanje_;
-                brojSedista = broj_s;
         }
         Sedista(const Sedista &copy_sedista)
         {
                 tip = copy_sedista.tip;
                 stanje = copy_sedista.stanje;
-                brojSedista = copy_sedista.brojSedista;
         }
 
         TipSedista getTip()
@@ -39,10 +35,6 @@ public:
         {
                 return stanje;
         }
-        int getBrojSedista()
-        {
-                return brojSedista;
-        }
 
         void setTip(TipSedista tip_)
         {
@@ -51,10 +43,6 @@ public:
         void setStanje(SedistaStanje stanje_)
         {
                 stanje = stanje_;
-        }
-        void setBrojSedista(int broj_s)
-        {
-                brojSedista = broj_s;
         }
 
         void fix()override{
