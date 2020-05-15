@@ -5,53 +5,57 @@
 class Rezervoar : public Fixable
 {
 private:
-    bool isIspravan;
-    int kapacitet;
+        bool isIspravan;
+        int kapacitet;
 public:
-    Rezervoar()
-    {
-        isIspravan = true;
-        kapacitet = 40;
-    }
-    Rezervoar(bool isIspravan, int kapacitet_)
-    {
-        this -> isIspravan = isIspravan;
-        kapacitet = kapacitet_;
-    }
-    Rezervoar(const Rezervoar &copy_rezervoar)
-    {
-        isIspravan = copy_rezervoar.isIspravan;
-        kapacitet = copy_rezervoar.kapacitet;
-    }
-    bool getIsIspravan()
-    {
-        return isIspravan;
-    }
-    int getKapacitet()
-    {
-        return kapacitet;
-    }
-    void setIsIspravan(bool isIspravan)
-    {
-        this -> isIspravan = isIspravan;
-    }
-    void setKapacitet(int kapacitet_)
-    {
-        kapacitet = kapacitet_;
-    }
-    void fix()override{
-        if(isIspravan == false){
-            isIspravan == true;
+        Rezervoar()
+        {
+                isIspravan = true;
+                kapacitet = 40;
         }
-    }
-    Rezervoar& operator++(){
-        kapacitet++;
-        return *this;
+        Rezervoar(bool isIspravan, int kapacitet_)
+        {
+                this -> isIspravan = isIspravan;
+                kapacitet = kapacitet_;
         }
-    Rezervoar& operator--(){
-        kapacitet--;
-        return *this;
+        Rezervoar(const Rezervoar &copy_rezervoar)
+        {
+                isIspravan = copy_rezervoar.isIspravan;
+                kapacitet = copy_rezervoar.kapacitet;
         }
+
+        bool getIsIspravan()
+        {
+                return isIspravan;
+        }
+        int getKapacitet()
+        {
+                return kapacitet;
+        }
+
+        void setIsIspravan(bool isIspravan)
+        {
+                this -> isIspravan = isIspravan;
+        }
+        void setKapacitet(int kapacitet_)
+        {
+                kapacitet = kapacitet_;
+        }
+
+        void fix()override{
+                if(isIspravan == false){
+                isIspravan == true;
+                }
+        }
+
+        Rezervoar& operator++(){
+                kapacitet++;
+                return *this;
+                }
+        Rezervoar& operator--(){
+                kapacitet--;
+                return *this;
+                }
 };
 
 #endif // REZERVOAR_HPP_INCLUDED
