@@ -10,8 +10,8 @@ private:
         GumeStanje stanje;
         bool isZimske;
         bool isRadial;
-        float heightFelne;
-        float widthFelne;
+        float diameterFelne;
+        float depthFelne;
         float wall;
 public:
         Gume()
@@ -19,17 +19,17 @@ public:
                 stanje = NADUVANE;
                 isZimske = false;
                 isRadial = true;
-                heightFelne = 14;
-                widthFelne = 6.5;
+                diameterFelne = 14;
+                depthFelne = 6.5;
                 wall = 3;
         }
-        Gume(GumeStanje stanje_, bool isZimske, bool isRadial, float heightFelne_, float widthFelne_, float wall_)
+        Gume(GumeStanje stanje_, bool isZimske, bool isRadial, float diameterFelne_, float depthFelne_, float wall_)
         {
                 stanje = stanje_;
                 this -> isZimske = isZimske;
                 this -> isRadial = isRadial;
-                heightFelne = heightFelne_;
-                widthFelne = widthFelne_;
+                diameterFelne = diameterFelne_;
+                depthFelne = depthFelne_;
                 wall = wall_;
         }
         Gume(const Gume &copy_gume)
@@ -37,8 +37,8 @@ public:
                 stanje = copy_gume.stanje;
                 isZimske = copy_gume.isZimske;
                 isRadial = copy_gume.isRadial;
-                heightFelne = copy_gume.heightFelne;
-                widthFelne = copy_gume.widthFelne;
+                diameterFelne = copy_gume.diameterFelne;
+                depthFelne = copy_gume.depthFelne;
                 wall = copy_gume.wall;
         }
 
@@ -54,13 +54,13 @@ public:
         {
                 return isRadial;
         }
-        float getHeightFelne()
+        float getDiameterFelne()
         {
-                return heightFelne;
+                return diameterFelne;
         }
-        float getWidthFelne()
+        float getDepthFelne()
         {
-                return widthFelne;
+                return depthFelne;
         }
         float getWall()
         {
@@ -79,13 +79,13 @@ public:
         {
                 this -> isRadial = isRadial;
         }
-        void setHeight(float heightFelne_)
+        void setDiameter(float diameterFelne_)
         {
-                heightFelne = heightFelne;
+                diameterFelne = diameterFelne;
         }
-        void setWidth(float widthFelne_)
+        void setDepth(float depthFelne_)
         {
-                widthFelne = widthFelne_;
+                depthFelne = depthFelne_;
         }
         void setWall(float wall_)
         {
