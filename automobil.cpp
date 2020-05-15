@@ -44,7 +44,7 @@ private:
         Ram ram;
         List<Tocak> tocak;
         Prozori prozori;
-        Sedista sedista;
+        List<Sedista> sedista;
         Rezervoar rezervoar;
         Karoserija karoserija;
         Volan volan;
