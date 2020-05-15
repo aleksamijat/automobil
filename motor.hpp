@@ -14,7 +14,6 @@ private:
         bool isTransverse;
         int konjskeSnage;
         int obrtniMoment;
-        int displacement;
         float potrosnja;
         bool isNaturallyAspirated;
 public:
@@ -26,12 +25,11 @@ public:
                 isTransverse = true;
                 konjskeSnage = 44;
                 obrtniMoment = 39;
-                displacement = 1592;
                 potrosnja = 6.2;
                 isNaturallyAspirated = true;
         }
         Motor(TipMotora tip_, MotorStanje stanje_, int broj_c, bool isTransverse,
-              int konjske_s, int obrtni_m, int displacement_, int potrosnja_, bool isNaturallyAspirated)
+              int konjske_s, int obrtni_m, int potrosnja_, bool isNaturallyAspirated)
         {
                 tip = tip_;
                 stanje = stanje_;
@@ -39,7 +37,6 @@ public:
                 this -> isTransverse = isTransverse;
                 konjskeSnage = konjske_s;
                 obrtniMoment = obrtni_m;
-                displacement = displacement_;
                 potrosnja = potrosnja_;
                 this -> isNaturallyAspirated = isNaturallyAspirated;
         }
@@ -51,7 +48,6 @@ public:
                 isTransverse = copy_motor.isTransverse;
                 konjskeSnage = copy_motor.konjskeSnage;
                 obrtniMoment = copy_motor.obrtniMoment;
-                displacement = copy_motor.displacement;
                 potrosnja = copy_motor.potrosnja;
                 isNaturallyAspirated = copy_motor.isNaturallyAspirated;
         }
@@ -79,10 +75,6 @@ public:
         int getObrtniMoment()
         {
                 return obrtniMoment;
-        }
-        int getDisplacement()
-        {
-                return displacement;
         }
         float getPotrosnja()
         {
@@ -116,10 +108,6 @@ public:
         void setObrtniMoment(int obrtni_m)
         {
                 obrtniMoment = obrtni_m;
-        }
-        void setDisplacement(int displacement_)
-        {
-                displacement = displacement_;
         }
         void setPotrosnja(int potrosnja_)
         {
