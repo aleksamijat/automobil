@@ -191,7 +191,7 @@ int main()
 
         Prozori prozori(NORMALNI, PODIGNUTI);
 
-        Sedista sedistaS(PLATNENA, NAMESTENA, 4);
+        Sedista sedistaS(PLATNENA, NAMESTENA);
         List<Sedista> sedista;
         sedista.add(0, sedistaS);
         sedista.add(1, sedistaS);
